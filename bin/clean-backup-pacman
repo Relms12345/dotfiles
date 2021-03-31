@@ -1,0 +1,8 @@
+#!/bin/sh
+notify-send "WARNING: CLEANING & BACKING UP PACMAN PACKAGES! NO NOT USE PACMAN RELATED COMMANDS UNTIL FINISH MESSAGE IS SENT!"
+pacman -Qtdq --noconfirm | pacman -Rns --noconfirm -
+pacman -Sc --noconfirm
+tar -cvf - /var/lib/pacman | xz -9e -vc - > /home/relms/Documents/dotfiles/pacman_database.tar.xz
+pacman -Q > /home/relms/Documents/dotfiles/packages.txt
+cd /home/relms/Documents/dotfiles && git add . && git commit -m "[AUTOMATED PUSH] Backed up Pacman" && git push
+notify-send "Finished backing up Pacman."

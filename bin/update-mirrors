@@ -1,0 +1,2 @@
+#!/bin/sh
+sudo reflector --protocol http --protocol https --age 12 --verbose --sort rate --latest 10 --country "United States" --fastest 10 --save /etc/pacman.d/mirrorlist

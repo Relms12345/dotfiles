@@ -1,0 +1,9 @@
+[user]
+	name = Relms12345
+	email = relms@relms.dev
+[init]
+	defaultBranch = master
+[pull]
+	rebase = false
+[credential]
+	helper = store

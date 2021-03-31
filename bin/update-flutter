@@ -1,0 +1,6 @@
+#!/bin/sh
+flutter upgrade
+flutter update-packages
+flutter precache
+flutter ide-config --overwrite
+flutter doctor -v
